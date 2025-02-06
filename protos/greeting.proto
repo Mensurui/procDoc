@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option go_package = "github.com/Mensurui/procDoc/proto";
+
+service Greetings{
+  rpc HealthCheck(HealthCheckRequest)
+  returns (HealthCheckResponse);
+}
+
+message HealthCheckRequest{
+  string name = 1;
+  string age = 2;
+}
+
+message HealthCheckResponse{
+  string response = 2;
+}
