@@ -3,15 +3,25 @@ syntax = "proto3";
 option go_package = "github.com/Mensurui/procDoc/proto";
 
 service Greetings{
+// An endpoint that is mainly used to check the status of the server
   rpc HealthCheck(HealthCheckRequest)
   returns (HealthCheckResponse);
 }
 
+/**
+ * This is a leading comment for the message HealthRequest
+*/
 message HealthCheckRequest{
+  // Here the user is supposed to share their name
   string name = 1;
+  // Here the user is supposed to share their age
   string age = 2;
 }
 
+/**
+ * This is the leading comment for the message HealthCheckResponse
+*/
 message HealthCheckResponse{
+  // Here the user expects a response from the server
   string response = 2;
 }
