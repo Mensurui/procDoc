@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+option go_package = "github.com/Mensurui/procDoc/customer";
+
+service Customer {
+  rpc ProfileSetup(ProfileSetupRequest)
+  returns (ProfileSetupResponse);
+}
+
+/**
+ * This Message is for requesting a profile to be setup for the customer
+**/
+message ProfileSetupRequest{
+  string first_name = 1; //A place to add the customers first name
+  string last_name = 2; // A holder to add the customers last name
+}
+
+/**
+ * This Message is for requesting a profile to be setup for the customer
+**/
+message ProfileSetupResponse{
+  bool success = 1; //A response to tell if the registration has gone through
+}

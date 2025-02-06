@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+option go_package = "github.com/Mensurui/procDoc/realProto";
+
+service FetchingService{
+  rpc FetchData(FetchDataRequest)
+  returns (FetchDataResponse);
+}
+
+/**
+ * A message for fetching data where the user requests it by giving its name
+**/
+message FetchDataRequest{
+  // The field required to query the data from the database
+  string data_name = 1;
+}
+
+/**
+ * A message for fetching data where the user requests it by giving its name
+**/
+message FetchDataResponse{
+  // The name or package in which the data will be sent to the user
+  string fetched_data = 1;
+}
